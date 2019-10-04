@@ -1,5 +1,7 @@
 all:run
 build:
-	clang main.c -o main
+	g++ main.c -o main
 run: build
-	./main
+	[ -f "res.txt"] && rm res.txt || echo 
+	./main > res.txt
+	cat res.txt
