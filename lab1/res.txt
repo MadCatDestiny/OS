@@ -3,18 +3,18 @@ MAIN - The proccess id in main : 1
 MAIN - The parent proccess id in main : 1
 new pid : 0
 Start atexit
-1 - The proccess id in atexit : 13276
-1 - The parent proccess id in atexit : 13275
+1 - The proccess id in atexit : 13703
+1 - The parent proccess id in atexit : 13702
 Start onexit
-1 - The proccess id in on_exit : 13276
-1 - The parent proccess id in on_exit : 13275
+1 - The proccess id in on_exit : 13703
+1 - The parent proccess id in on_exit : 13702
 Start main
 MAIN - The proccess id in main : 1
 MAIN - The parent proccess id in main : 1
-new pid : 13276
+new pid : 13703
 Start atexit
-1 - The proccess id in atexit : 13275
-1 - The parent proccess id in atexit : 13274
+1 - The proccess id in atexit : 13702
+1 - The parent proccess id in atexit : 13701
 Start onexit
-1 - The proccess id in on_exit : 13275
-1 - The parent proccess id in on_exit : 13274
+1 - The proccess id in on_exit : 13702
+1 - The parent proccess id in on_exit : 13701
