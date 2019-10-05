@@ -11,9 +11,9 @@ int main(void)
 {
     int count = 0;
     puts("Start main");
-  
     printf("MAIN - The proccess id in main : %d\n", getpid());
     printf("MAIN - The parent proccess id in main : %d\n", getppid());
+   
     int res = on_exit(onend_handler,0);
     int res1 = atexit(atend_handler);
     if(res != 0 || res1 != 0) 
@@ -27,8 +27,9 @@ int main(void)
         waitpid(pid, 0, 0);
     }
     else
-        puts("In child process\n");
+        printf("In child process with parent %d\n", getppid());
     
+
     exit(1);
     return 0;
 }
