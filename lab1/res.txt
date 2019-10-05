@@ -1,20 +1,20 @@
+#####################fork before hook
 Start main
-MAIN - The proccess id in main : 1
-MAIN - The parent proccess id in main : 1
+new pid : 4372
 new pid : 0
+MAIN - The proccess id in main : 4372
+MAIN - The parent proccess id in main : 4366
 Start atexit
-1 - The proccess id in atexit : 13703
-1 - The parent proccess id in atexit : 13702
+1 - The proccess id in atexit : 4372
+1 - The parent proccess id in atexit : 4366
 Start onexit
-1 - The proccess id in on_exit : 13703
-1 - The parent proccess id in on_exit : 13702
-Start main
-MAIN - The proccess id in main : 1
-MAIN - The parent proccess id in main : 1
-new pid : 13703
+1 - The proccess id in on_exit : 4372
+1 - The parent proccess id in on_exit : 4366
+MAIN - The proccess id in main : 4366
+MAIN - The parent proccess id in main : 4360
 Start atexit
-1 - The proccess id in atexit : 13702
-1 - The parent proccess id in atexit : 13701
+1 - The proccess id in atexit : 4366
+1 - The parent proccess id in atexit : 4360
 Start onexit
-1 - The proccess id in on_exit : 13702
-1 - The parent proccess id in on_exit : 13701
+1 - The proccess id in on_exit : 4366
+1 - The parent proccess id in on_exit : 4360
