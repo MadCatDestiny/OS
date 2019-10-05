@@ -1,4 +1,4 @@
-#####################fork before hook
+#####################fork before hook#####################
 Start main
 new pid : 4372
 new pid : 0
@@ -18,3 +18,24 @@ Start atexit
 Start onexit
 1 - The proccess id in on_exit : 4366
 1 - The parent proccess id in on_exit : 4360
+
+#####################fork after hook#####################
+g++ main.c -o main
+./main
+Start main
+MAIN - The proccess id in main : 4595
+MAIN - The parent proccess id in main : 4589
+new pid : 4596
+new pid : 0
+Start atexit
+1 - The proccess id in atexit : 4596
+1 - The parent proccess id in atexit : 4595
+Start onexit
+1 - The proccess id in on_exit : 4596
+1 - The parent proccess id in on_exit : 4595
+Start atexit
+1 - The proccess id in atexit : 4595
+1 - The parent proccess id in atexit : 4589
+Start onexit
+1 - The proccess id in on_exit : 4595
+1 - The parent proccess id in on_exit : 4589

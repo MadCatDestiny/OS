@@ -11,8 +11,10 @@ int main(void)
 {
     int count = 0;
     puts("Start main");
-  
-
+        __pid_t pid;
+    printf("new pid : %d\n",pid = fork());
+    if (pid < 0)
+        waitpid(pid, 0, 0);
     printf("MAIN - The proccess id in main : %d\n", getpid());
     printf("MAIN - The parent proccess id in main : %d\n", getppid());
      
@@ -21,11 +23,8 @@ int main(void)
     int res1 = atexit(atend_handler);
     if(res != 0 && res1 != 0) 
         puts("Atexit error\n");
-      
-        __pid_t pid;
-    printf("new pid : %d\n",pid = fork());
+    
 
-    waitpid(pid, 0, 0);
     exit(1);
     return 0;
 }
