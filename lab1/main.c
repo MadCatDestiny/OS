@@ -10,14 +10,20 @@ void atend_handler(void);
 int main(void)
 {
     int count = 0;
-    puts("Start main");
-        __pid_t pid;
-    printf("new pid : %d\n",pid = fork());
-    if (pid < 0)
-        waitpid(pid, 0, 0);
+    puts("Start main\n");
+  
     printf("MAIN - The proccess id in main : %d\n", getpid());
     printf("MAIN - The parent proccess id in main : %d\n", getppid());
-     
+    __pid_t pid;
+    printf("new pid : %d\n",pid = fork());
+    if (pid != 0)
+    {
+        printf("Wait child in parent process %d\n",pid);
+        waitpid(pid, 0, 0);
+    }
+    else
+        puts("In child process\n");
+    
 
     int res = on_exit(onend_handler,0);
     int res1 = atexit(atend_handler);
