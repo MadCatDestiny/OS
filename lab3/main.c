@@ -42,12 +42,13 @@ int main()
 			close(fd1[0]);
 			sec = time(NULL);
 			write(fd1[1], &sec, sizeof(time_t)); 
-			printf("Writen in child %ld\n", sec);
+			printf("Writen in child %s\n", ctime(&sec));	
 			close(fd1[1]); 
 			int res = 0;
 			waitpid(p, &res, 0); 
 			close(fd2[1]);
 			read(fd2[0], &child_sec, sizeof(time_t));
+			printf("Time in in parent: %s\n",ctime(&child_sec));
 			printf("Latency in parent %ld\n", child_sec - sec); 
 			close(fd2[0]); 
 
@@ -56,11 +57,15 @@ int main()
 		// child process 
 		else
 		{ 
-			close(fd1[1]);  
+			close(fd1[1]);
+			printf("Sleep 1s\n");
+			sleep(1);
 			read(fd1[0],&child_sec , sizeof(time_t));
+			printf("Time in in child: %s\n",ctime(&child_sec));
 			printf("Latency in child: %ld\n",time(NULL) - child_sec);
 			close(fd1[0]); 
 			close(fd2[0]); 
+			printf("Sleep 1s\n");
 			sleep(1);
 			child_sec =  time(NULL);
 			write(fd2[1],&child_sec, sizeof(time_t)); 
